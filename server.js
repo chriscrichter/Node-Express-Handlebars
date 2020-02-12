@@ -1,33 +1,30 @@
-const inquirer = require('inquirer');
-const mysql = require('mysql')
-const cTable = require('console.table');
-const logo = require('asciiart-logo');
+// Dependencies
+var express = require("express");
+var bodyParser = require("body-parser");
 
-console.log(
-    logo({
-        name: 'Eat-Da-Burger',
-        font: 'Speed',
-        lineChars: 10,
-        padding: 2,
-        margin: 3,
-        borderColor: 'blue',
-        logoColor: 'bold-red',
-        textColor: 'red',
-    })
-    .render()
-);
+var app = express();
+var PORT = process.env.PORT || 3000;
 
-const connection = mysql.createConnection({
-    host: "localhost",
-    port: 3306,
-    user: "root",
-    password: "coder2020",
-    database: "employeeTracker_db"
-});
+// Serve static content for the app from the "public" directory in the application directory.
+app.use(express.static("public"));
 
-connection.connect(function (err) {
-    if (err) {
-        console.error("error connecting: " + err.stack);
-        return;
-    }
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// parse application/json
+app.use(bodyParser.json());
+
+// Set Handlebars.
+var exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
+// Import routes and give the server access to them.
+var routes = require("./controllers/burgers_controller.js");
+
+app.use(routes);
+
+app.listen(PORT, function() {
+    console.log("Server listening on: http://localhost:" + PORT);
 });

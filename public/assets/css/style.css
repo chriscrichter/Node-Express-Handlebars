@@ -1,0 +1,55 @@
+.jumbotron {
+    background-image: url("/assets/img/background.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 790px;
+    margin-top: 25px;
+
+    background-color: white;
+    
+}
+
+.jumbotron h1 {
+    font-family: 'Raleway', sans-serif, Helvetica;
+    font-weight: bold;
+}
+
+h3 {
+    font-family: 'Raleway', sans-serif, Helvetica;
+    margin-left: 20px;
+}
+
+.container {
+    font-family: 'Raleway', sans-serif, Helvetica;
+}
+
+#newburger {
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+#burgers {
+    font-size: 1.2em;
+}
+
+#color-override {
+    color: black;
+}
+
+#lefthead {
+    background-color: #5cb85c;
+    color: white;
+    text-align: center;
+    font-size: 1.4em;
+}
+
+#eatbutton, #trashbutton {
+    float: right;
+}
+
+#righthead {
+    background-color: #f0ad4e;
+    color: white;
+    text-align: center;
+    font-size: 1.4em;
+}
