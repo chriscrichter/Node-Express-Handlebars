@@ -8,7 +8,7 @@ Node Express Handlebars
 
 Burgers that have not yet been eaten appear on the left and can be devoured by pushing the devour button. They then move to the right. Burgers can be added in the choose burger box, which updates the mySQL burger database as yet to be devoured.
 
-<img src="public/assets/gotburgers.png" width="600" height="350">
+<img src="assets/img/gotburgers.png" width="600" height="350">
 
 
 ## GitHub page
